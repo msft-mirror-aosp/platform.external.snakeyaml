@@ -30,7 +30,6 @@ src_file_prefix="$1"
 src_file="$2"
 src_file_with_prefix="$2"
 dst_file="$3"
-dst_dir="$(dirname "$dst_file")"
 
 # Sanity checking
 
@@ -80,11 +79,6 @@ fi
 set -e
 
 # Copy the src file and then apply the patch to it.
-mkdir -p "$dst_dir"
 cp "$src_file_with_prefix" "$dst_file"
-if ! [[ -f "$dst_file" ]]; then
-  echo "File "$dst_file" does not exist; patching will fail" >&2
-  exit 1
-fi
 patch -p0 "$dst_file" "$patch_file_src"
 echo "Successfully applied patch $patch_file_src into copy of file $dst_file"
