@@ -33,6 +33,13 @@ snakeyaml_src_files_unfiltered := $(call all-java-files-under, src/main)
 # We omit the list of files that need to be patched because those are included by LOCAL_GENERATED_SOURCES instead.
 snakeyaml_src_files := $(filter-out $(snakeyaml_need_patch_src_files) $(snakeyaml_unsupported_android_src_files),$(snakeyaml_src_files_unfiltered))
 
+# Target Java build
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := $(snakeyaml_src_files)
+LOCAL_MODULE := snakeyaml
+include $(LOCAL_PATH)/ApplyAndroidPatches.mk
+include $(BUILD_STATIC_JAVA_LIBRARY)
+
 # Host-side Java build
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(snakeyaml_src_files_unfiltered)
@@ -43,17 +50,7 @@ include $(BUILD_HOST_JAVA_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := $(snakeyaml_src_files)
 LOCAL_MODULE := snakeyaml-hostdex
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-
-# Apply all of the Android patches in src/patches/android by running patch-android-src script on them.
-intermediates:= $(local-generated-sources-dir)
-GEN := $(addprefix $(intermediates)/, $(snakeyaml_need_patch_src_files)) # List of all files that need to be patched.
-$(GEN) : PRIVATE_PATH := $(LOCAL_PATH)
-$(GEN) : PRIVATE_CUSTOM_TOOL = $(PRIVATE_PATH)/patch-android-src $(PRIVATE_PATH)/ $< $@
-$(GEN): $(intermediates)/%.java : $(LOCAL_PATH)/%.java $(LOCAL_PATH)/patch-android-src
-	$(transform-generated-source)
-LOCAL_GENERATED_SOURCES += $(GEN)
-
+include $(LOCAL_PATH)/ApplyAndroidPatches.mk
 include $(BUILD_HOST_DALVIK_JAVA_LIBRARY)
 
 # TODO: Consider adding tests.
