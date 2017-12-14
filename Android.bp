@@ -43,7 +43,7 @@ genrule {
     out: ["snakeyaml_patched_src_files.srcjar"],
 }
 
-java_library_static {
+java_library {
     name: "snakeyaml",
     host_supported: true,
     hostdex: true,
