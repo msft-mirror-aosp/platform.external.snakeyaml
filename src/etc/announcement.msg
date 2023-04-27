@@ -1,26 +1,27 @@
 From: Andrey Somov <public.somov@gmail.com>
 To: yaml-core@lists.sourceforge.net
-Subject: [ANN] SnakeYAML-1.17 final is available
+Subject: [ANN] SnakeYAML-1.32 final is available
 
 ==========================
- Announcing SnakeYAML-1.17
+ Announcing SnakeYAML-1.32
 ==========================
 
 A new release of SnakeYAML is now available:
 
-    http://www.snakeyaml.org
+    https://bitbucket.org/snakeyaml/snakeyaml
 
-This release delivers minor changes and bug fixes.
+This release delivers minor changes and bug fixes
 
-The complete list of changes is here: https://bitbucket.org/asomov/snakeyaml/wiki/Changes
+The complete list of changes is here: https://bitbucket.org/snakeyaml/snakeyaml/wiki/Changes
 
 Resources
 ==========
 
-SnakeYAML homepage: http://www.snakeyaml.org
-SnakeYAML documentation: https://bitbucket.org/asomov/snakeyaml/wiki/Home
+SnakeYAML homepage: https://bitbucket.org/snakeyaml/snakeyaml
+SnakeYAML documentation: https://bitbucket.org/snakeyaml/snakeyaml/wiki/Home
 
-JAR package: http://repo2.maven.org/maven2/org/yaml/snakeyaml/1.17/snakeyaml-1.17.jar
+JAR package: http://repo2.maven.org/maven2/org/yaml/snakeyaml/1.32/snakeyaml-1.32.jar
+Android: http://repo2.maven.org/maven2/org/yaml/snakeyaml/1.32/snakeyaml-1.32-android.jar
 
 YAML homepage: http://yaml.org/
 YAML-core mailing list: http://lists.sourceforge.net/lists/listinfo/yaml-core
@@ -28,7 +29,7 @@ YAML-core mailing list: http://lists.sourceforge.net/lists/listinfo/yaml-core
 About SnakeYAML
 ================
 
-SnakeYAML is a YAML parser and emitter for Java 6.
+SnakeYAML is a YAML parser and emitter for Java 7.
 
 SnakeYAML features a complete YAML 1.1 parser.
 SnakeYAML is applicable for a broad range of tasks from complex
