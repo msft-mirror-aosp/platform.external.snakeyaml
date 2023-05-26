@@ -55,15 +55,12 @@ license {
     ],
     license_text: [
         "LICENSE.txt",
-        "NOTICE",
+        "LICENSE",
     ],
 }
 
 snakeyaml_need_patch_src_files = [
-    "src/main/java/org/yaml/snakeyaml/extensions/compactnotation/CompactConstructor.java",
-    "src/main/java/org/yaml/snakeyaml/constructor/Constructor.java",
     "src/main/java/org/yaml/snakeyaml/introspector/PropertyUtils.java",
-    "src/main/java/org/yaml/snakeyaml/representer/Representer.java",
 ]
 
 genrule {
