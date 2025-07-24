@@ -11,6 +11,9 @@ third_party {
   }
   version: "snakeyaml-1.32"
   license_type: NOTICE
+  security {
+    tag: "NVD-CPE2.3:cpe:/a:snakeyaml_project:snakeyaml:1.32"
+  }
   last_upgrade_date {
     year: 2023
     month: 4
